@@ -1,0 +1,57 @@
+.cpu_artiklen {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+    grid-gap: 1em;
+}
+
+.productItem {
+    display: grid;
+    grid-gap: 1em;
+    & img {
+        max-width: 100%;
+    }
+}
+
+.image_box {
+    display: grid;
+    min-height: 250px;
+    align-items: end;
+}
+
+.title {
+    font-size: .65em;
+    color: #999;
+    text-align: center;
+}
+
+.rating {
+    zoom: .7;
+    text-align: center;
+    & > p {
+        margin: 0 .25em;
+        display: inline-block;
+    }
+    & path {
+        fill: orange;
+    }
+    & .brocken path{
+        fill: #ccc;
+    }
+}
+
+.komments {
+    color: #999;
+    &:before {
+        content:'{';
+    }
+    &:after {
+        content:'}';
+    }
+}
+
+.price {
+    font-size: 1.25em;
+    font-weight: 900;
+    color: #0066cd;
+    text-align: center;
+}
