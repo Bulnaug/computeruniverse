@@ -12,11 +12,14 @@ class List extends React.Component<ListInterface.IProps, ListInterface.IState> {
         this.state = {};
     }
 
-    CPU_Artikeln = this.props.ItemsData.map(artikel => <ListItem artikel-image={artikel.image} artikel-title={artikel.title} artikel-komments={artikel.komments} artikel-price={artikel.price}/>);
-
     render(): JSX.Element {
-        return <div className={style.cpu_artiklen}>
-           {this.CPU_Artikeln}
-        </div>;
-}}
+        const {ItemsData} = this.props;
+
+        const cpuArtikel = ItemsData.map((artikel) => <ListItem image={artikel.image} title={artikel.title} stars={artikel.stars} komments={artikel.comments} price={artikel.price}/>);
+
+        return (<div className={style.cpu_artiklen}>
+            {cpuArtikel} 
+        </div>);
+    }
+}
 export default List;

@@ -1,3 +1,84 @@
 .productItem {
     display: grid;
+    grid-gap: 1em;
+    & img {
+        max-width: 100%;
+    }
+}
+
+.image_box {
+    display: grid;
+    min-height: 250px;
+    align-items: end;
+}
+
+.title {
+    font-size: .65em;
+    color: #999;
+    text-align: center;
+}
+
+.rating {
+    zoom: .7;
+    text-align: center;
+    & > div, p {
+        margin: 0 .25em;
+        display: inline-block;
+    }
+    & path {
+        fill: orange;
+    }
+    & .brocken path{
+        fill: #ccc;
+    }
+}
+
+.komments {
+    color: #999;
+    &:before {
+        content:'{';
+    }
+    &:after {
+        content:'}';
+    }
+}
+
+.price {
+    font-size: 1.25em;
+    font-weight: 900;
+    color: #0066cd;
+    text-align: center;
+}
+
+.stars[data-stars = four-Stars] svg:last-child path {
+    fill: #ccc;
+}
+.stars[data-stars = three-Stars] svg:nth-child(4) path,
+.stars[data-stars = three-Stars] svg:nth-child(5) path {
+    fill: #ccc;
+}
+.stars[data-stars = two-Stars] svg:nth-child(3) path,
+.stars[data-stars = two-Stars] svg:nth-child(4) path,
+.stars[data-stars = two-Stars] svg:nth-child(5) path {
+    fill: #ccc;
+}
+.stars[data-stars = one-Stars] svg:not(:first-child) path {
+    fill: #ccc;
+}
+.stars[data-stars = zero-Stars] path {
+    fill: #ccc;
+}
+
+@media(min-width:320px) and (max-width:768px) {
+    .productItem {
+        max-width: 10em;
+        margin: auto;
+    }
+}
+
+@media(min-width:768px) and (max-width:960px) {
+    .productItem {
+        max-width: 10em;
+        margin: auto;
+    }
 }

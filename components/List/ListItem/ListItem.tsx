@@ -10,18 +10,20 @@ class ListItem extends React.Component<any, any> {
         this.state = {};
     }
 
-    render(): JSX.Element {
+
+
+    render(): JSX.Element {       
         return <div className={style.productItem} >
             <div className={style.image_box}><img src={this.props.image}/></div>
             <div className={style.title}>{this.props.title}</div>
             <div className={style.rating}>
-                <p className={style.stars}>
+                <div className={style.stars} data-stars={this.props.stars}>
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                </p>
+                    <FontAwesomeIcon icon={faStar} />                  
+                </div>
                 <p className={style.komments}>{this.props.komments}</p>
             </div>
             <div className={style.price}>{this.props.price}</div>
